@@ -1,0 +1,49 @@
+
+################################MYSQL
+create table tbl_category (
+ `id` BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `category_name` VARCHAR(255) NULL DEFAULT NULL
+);
+
+CREATE TABLE tbl_book(
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `sku` VARCHAR(255) DEFAULT NULL,
+  `name` VARCHAR(255) DEFAULT NULL,
+  `description` VARCHAR(255) DEFAULT NULL,
+  `unit_price` DECIMAL(13,2) DEFAULT NULL,
+  `image_url` VARCHAR(255) DEFAULT NULL,
+  `active`  VARCHAR(255) DEFAULT NULL,
+  `units_in_stock` INT(11) DEFAULT NULL,
+  `date_created` DATETIME DEFAULT NULL,
+  `last_updated` DATETIME DEFAULT NULL,
+  `category_id` BIGINT(20) DEFAULT NULL,
+  FOREIGN KEY (`category_id`) REFERENCES `tbl_category` (`id`)
+);
+
+INSERT INTO tbl_category (category_name) values ('Text Books');
+INSERT INTO tbl_category (category_name) values ('Fantacy');
+
+############################## POSTGRES
+
+create table tbl_category (
+ id   SERIAL PRIMARY KEY,
+ category_name VARCHAR(255) NULL DEFAULT NULL
+);
+
+CREATE TABLE tbl_book(
+  id   SERIAL PRIMARY KEY,
+   sku  VARCHAR(255) DEFAULT NULL,
+   name  VARCHAR(255) DEFAULT NULL,
+   description  VARCHAR(255) DEFAULT NULL,
+   unit_price  DECIMAL(13,2) DEFAULT NULL,
+   image_url  VARCHAR(255) DEFAULT NULL,
+   active   VARCHAR(255) DEFAULT NULL,
+   units_in_stock  INT  DEFAULT NULL,
+   date_created  timestamp    DEFAULT NULL,
+   last_updated  timestamp    DEFAULT NULL,
+   category_id  SERIAL,
+  FOREIGN KEY ( category_id ) REFERENCES  tbl_category  ( id )
+);
+
+INSERT INTO tbl_category (category_name) values ('Text Books');
+INSERT INTO tbl_category (category_name) values ('Fantacy');

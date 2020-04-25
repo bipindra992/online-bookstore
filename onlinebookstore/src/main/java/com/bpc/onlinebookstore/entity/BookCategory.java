@@ -20,7 +20,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class BookCategory {
+public class BookCategory { 
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
