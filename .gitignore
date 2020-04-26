@@ -23,3 +23,6 @@
 hs_err_pid*
 /.metadata/
 /.metadata/
+
+/onlinebookstore/target/
+/angular-bookstore/node_modules/
