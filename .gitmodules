@@ -1,0 +1,3 @@
+[submodule "angular-bookstore"]
+	path = angular-bookstore
+	url = https://github.com/bipindra992/online-bookstore
