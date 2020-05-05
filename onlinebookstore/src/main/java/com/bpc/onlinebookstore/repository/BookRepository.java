@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.bpc.onlinebookstore.entity.Book;
 
-@CrossOrigin("*")
+
 public interface BookRepository extends JpaRepository<Book, Long> {
 	
 	@RestResource(path="categoryid")
     Page<Book>  findByCategoryId(@Param("id") Long id, Pageable pageable);
+	
+	@RestResource(path="searchbykeyword")
+	Page<Book> findByNameContaining(@Param("name") String keyword, Pageable pageable);
 }
